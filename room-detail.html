@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Люкс «Лесной» — Fir Di</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Специфичные стили для страницы номера */
+    .room-hero {
+      position: relative;
+      height: 600px;
+      margin-bottom: 40px;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .room-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .room-hero:hover img {
+      transform: scale(1.05);
+    }
+    .room-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      color: var(--primary, #3498db);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .room-info-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+      align-items: start;
+    }
+    .room-desc h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: var(--dark, #333);
+    }
+    .room-desc p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .room-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .room-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+    }
+    .room-features li::before {
+      content: "✓";
+      color: var(--primary, #3498db);
+      font-weight: bold;
+    }
+    .room-specs {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+    .room-specs p {
+      margin: 10px 0;
+      color: #555;
+    }
+    .room-specs strong {
+      color: var(--dark, #333);
+    }
+    .room-price-block {
+      background: var(--primary, #3498db);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .room-price-block .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+    .room-price-block .per-night {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .gallery-thumbs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 40px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .gallery-thumbs img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      flex-shrink: 0;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .gallery-thumbs img:hover, .gallery-thumbs img.active {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .room-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Fir Di</a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="/room-detail.html">Номера</a>
+        <a href="events.html">Мероприятия</a>
+        <a href="/discounts.html">Скидки</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html#callback-form" class="btn-primary">Забронировать</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="standart">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge">Стандарт</div>
+    <!-- Основной слайд -->
+    <img src="чото.png" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>Стандарт</h1>
+      <p>Уютный и функциональный номер для спокойного отдыха. Пространство организовано так, чтобы даже на небольшой площади было удобно: эргономичная мебель, продуманное хранение вещей и базовый набор удобств для комфортного проживания.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>Удобная кровать с ортопедическим матрасом</li>
+        <li>Шкаф для одежды и прикроватные тумбы</li>
+        <li>Телевизор с кабельными каналами</li>
+        <li>Бесплатный Wi‑Fi</li>
+        <li>Кондиционер и система вентиляции</li>
+        <li>Собственная ванная комната (душ, фен, набор полотенец)</li>
+        <li>Набор для приготовления чая/кофе</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 20 м²</p>
+      <p><strong>Вместимость:</strong> до 2 гостей</p>
+      <p><strong>Этаж:</strong> 1–2 этаж, крыло с пониженным уровнем шума</p>
+      <p><strong>Тип кровати:</strong> двуспальная 160×200 см или 2 односпальные 90×200 см</p>
+      <p><strong>Вид из окна:</strong> на внутренний двор или боковую аллею</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">5 000 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак, обед и ужин</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В номере «Стандарт» мы сделали ставку на практичность и уют: плотные шторы блэкаут помогут выспаться даже в солнечный день, а кондиционер поддержит комфортную температуру. В ванной комнате — всё необходимое для утренних и вечерних ритуалов. Для гостей, приехавших по работе, предусмотрен компактный рабочий уголок у окна, а для отдыха — телевизор и доступ к стриминговым сервисам.</p>
+  </section>
+</main>
+
+<main class="single-room">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge">Однокомнатный</div>
+    <!-- Основной слайд -->
+    <img src="чото.png" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png"changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>Однокомнатный номер</h1>
+      <p>Просторный однокомнатный номер с улучшенной планировкой и расширенным набором удобств. Здесь больше места для свободного перемещения, а дополнительные опции делают пребывание ещё комфортнее.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>Большая двуспальная кровать с премиальным постельным бельём</li>
+        <li>Вместительный шкаф и комод</li>
+        <li>Телевизор Smart TV с доступом к онлайн‑кинотеатрам</li>
+        <li>Кондиционер и увлажнитель воздуха</li>
+        <li>Собственная ванная комната (душ, тропический душ, фен, халаты)</li>
+        <li>Мини‑холодильник</li>
+        <li>Электрический чайник и набор посуды</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 26 м²</p>
+      <p><strong>Вместимость:</strong> до 2 гостей</p>
+      <p><strong>Этаж:</strong> 2–3 этаж, центральное крыло</p>
+      <p><strong>Тип кровати:</strong> двуспальная 160×200 см</p>
+      <p><strong>Вид из окна:</strong> на парк или боковую улицу</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">7 200 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В этом номере достаточно пространства, чтобы чувствовать себя свободно: кровать расположена так, чтобы от неё
+
+      <main class="double-room">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge">Двухкомнатный</div>
+    <!-- Основной слайд -->
+    <img src="чото.png" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png"changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>Двухкомнатный номер</h1>
+      <p>Номер с продуманной зонировкой: отдельная спальня для полноценного отдыха и гостиная для работы или досуга. Идеален для семьи или гостей, которые ценят приватность.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>Изолированная спальня и гостиная зона</li>
+        <li>Шкаф‑купе и комод</li>
+        <li>Телевизор Smart TV в каждой комнате</li>
+        <li>Кондиционер в спальне и сплит‑система в гостиной</li>
+        <li>Собственная ванная комната (ванна и душ, фен, халаты, тапочки)</li>
+        <li>Мини‑кухня (холодильник, микроволновая печь, чайник, набор посуды)</li>
+        <li>Рабочий стол и эргономичное кресло</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 42 м²</p>
+      <p><strong>Вместимость:</strong> до 3 гостей</p>
+      <p><strong>Этаж:</strong> 3–4 этаж, тихое крыло</p>
+      <p><strong>Тип кровати:</strong> в спальне — двуспальная 180×200 см, в гостиной — раскладной диван 140×200 см</p>
+      <p><strong>Вид из окна:</strong> на парк или внутренний двор</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">14 500 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак для 2 гостей</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В двухкомнатном номере каждая зона имеет своё назначение: спальня — для отдыха, гостиная — для работы, просмотра фильмов или чаепития. Мини‑кухня позволяет приготовить простые блюда и хранить продукты. В ванной комнате — и ванна, и душ: можно выбрать, что больше хочется после насыщенного дня.</p>
+  </section>
+</main>
+
+<main class="triple-room">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge">Трёхкомнатный</div>
+    <!-- Основной слайд -->
+    <img src="чото.png" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>Трёхкомнатный номер</h1>
+      <p>Просторный трёхкомнатный номер с панорамными видами и расширенной инфраструктурой. Здесь достаточно места для семьи или небольшой компании, а продуманная планировка позволяет каждому чувствовать себя комфортно.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>2 изолированные спальни и просторная гостиная</li>
+        <li>Вместительные шкафы и гардероб</li>
+        <li>Телевизор Smart TV в каждой комнате</li>
+        <li>Кондиционеры в каждой комнате</li>
+        <li>2 ванные комнаты (одна с ванной, вторая с душем)</li>
+        <li>Полностью оборудованная мини‑кухня (холодильник, варочная панель, микроволновая печь, кофемашина, набор посуды)</li>
+        <li>Рабочий кабинет с эргономичной мебелью</li>
+        <li>Стиральная машина и гладильная доска</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 65 м²</p>
+      <p><strong>Вместимость:</strong> до 4–5 гостей</p>
+      <p><strong>Этаж:</strong> 4–5 этаж, видовая часть здания</p>
+      <p><strong>Тип кровати:</strong> главная спальня — King Size 180×200 см, вторая спальня — двуспальная 160×200 см, гостиная — раскладной диван</p>
+      <p><strong>Вид из окна:</strong> панорамный вид на парк и город</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">22 000 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак для всех гостей</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В трёхкомнатном номере мы предусмотрели всё для длительного проживания: стиральная машина, гладильная доска, полноценная мини‑кухня. Панорамные окна открывают красивые виды, а плотные шторы блэкаут гарантируют спокойный сон. В каждой комнате — свой кондиционер и телевизор, а в рабочем кабинете — всё необходимое для продуктивной работы.</p>
+  </section>
+</main>
+
+<main class="quad-room">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge">Четырёхкомнатный</div>
+    <!-- Основной слайд -->
+    <img src="чото.png" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>Четырёхкомнатный номер</h1>
+      <p>Премиальный четырёхкомнатный номер для тех, кто ценит простор, приватность и максимальный комфорт. Здесь можно комфортно разместиться большой семьёй или компанией, а также организовать деловую встречу.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>3 изолированные спальни, гостиная и обеденная зона</li>
+        <li>Вместительные гардеробы и системы хранения</li>
+        <li>Телевизор Smart TV в каждой комнате</li>
+        <li>Кондиционеры с индивидуальным управлением</li>
+        <li>2 ванные комнаты и гостевой санузел</li>
+        <li>Полностью оборудованная кухня (холодильник, варочная панель, духовой шкаф, посудомоечная машина, кофемашина, набор посуды)</li>
+        <li>Рабочий кабинет и зона для совещаний</li>
+        <li>Стиральная и сушильная машины</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 90 м²</p>
+      <p><strong>Вместимость:</strong> до 6 гостей</p>
+      <p><strong>Этаж:</strong> 5–6 этаж, премиальная видовая зона</p>
+      <p><strong>Тип кровати:</strong> главная спальня — King Size 180×200 см, 2 дополнительные спальни — двуспальные 160×200 см, гостиная — раскладной диван</p>
+      <p><strong>Вид из окна:</strong> панорамный вид на город и парк</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">32 000 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак для всех гостей и доступ к спа‑зоне</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В четырёхкомнатном номере каждая деталь продумана для удобства гостей: от системы хранения до полностью оборудованной кухни. Панорамные окна открывают впечатляющие виды, а индивидуальное управление климатом в каждой комнате позволяет создать идеальные условия. В зоне для совещаний можно провести небольшую встречу, а в гостиной — собраться всей компанией за ужином.</p>
+  </section>
+</main>
+
+<main class="vip">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge" style="background: #fff; color: #d35400; border-color: #d35400;">VIP</div>
+    <!-- Основной слайд -->
+    <img src="чото.png" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>VIP</h1>
+      <p>VIP‑номер — это максимальный уровень комфорта и сервиса. Здесь всё создано для того, чтобы вы чувствовали себя особенными: от премиальных материалов до персонального обслуживания.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>Просторная спальня и отдельная гостиная зона</li>
+        <li>Вместительный гардероб и система хранения</li>
+        <li>Телевизор Smart TV с премиальными подписками</li>
+        <li>Система климат‑контроля с фильтрацией воздуха</li>
+        <li>Ванная комната премиум‑класса (джакузи, тропический душ, халаты и тапочки из египетского хлопка, косметика на основе натуральных масел)</li>
+        <li>Кофемашина премиум‑класса и мини‑бар с премиальными напитками</li>
+        <li>Рабочий кабинет с эргономичной мебелью</li>
+        <li>Персональный консьерж и приоритетное обслуживание</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 70 м²</p>
+      <p><strong>Вместимость:</strong> до 3 гостей</p>
+      <p><strong>Этаж:</strong> верхний этаж, эксклюзивная видовая зона</p>
+      <p><strong>Тип кровати:</strong> King Size 180×200 см с премиальным постельным бельём</p>
+      <p><strong>Вид из окна:</strong> панорамный вид на город</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">35 000 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак в номер, спа‑процедуру и приоритетное обслуживание</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В VIP‑номере мы уделили внимание каждой детали: от качества постельного белья до ароматов в номере. Джакузи и тропический душ помогут расслабиться после насыщенного дня, а кофемашина премиум‑класса — начать утро с идеального кофе. Персональный консьерж поможет организовать досуг, забронировать столик в ресторане или купить билеты на мероприятие.</p>
+  </section>
+</main>
+
+<main class="accessible">
+  <!-- Кнопка назад -->
+  <a href="rooms.html" style="color: #7f8c8d; text-decoration: none; margin-bottom: 20px; display: inline-block;">← Назад к номерам</a>
+
+  <!-- Галерея и бейдж -->
+  <div class="room-hero">
+    <div class="room-badge" style="background: #fff; color: #27ae60; border-color: #27ae60;">Доступный</div>
+    <!-- Основной слайд -->
+    <img src="ч" alt="Вид номера" id="main-image">
+  </div>
+
+  <!-- Мини-галерея -->
+  <div class="gallery-thumbs">
+    <img src="чото.png" class="active" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+    <img src="чото.png" onclick="changeImage(this.src)">
+  </div>
+
+  <div class="room-info-grid">
+    <div class="room-desc">
+      <h1>Номер для гостей с ОВЗ</h1>
+      <p>Полностью адаптированный номер, спроектированный с учётом потребностей гостей с ограниченными возможностями здоровья. Здесь всё продумано для безопасного и комфортного проживания.</p>
+      
+      <h3>Что внутри</h3>
+      <ul class="room-features">
+        <li>Широкие дверные проёмы и коридоры без порогов</li>
+        <li>Поручни в ванной комнате, у кровати и в душевой зоне</li>
+        <li>Низко расположенные выключатели, розетки и элементы управления</li>
+        <li>Кнопка экстренного вызова персонала</li>
+        <li>Душевая кабина без порога с поручнями и сиденьем</li>
+        <li>Адаптированная мебель (регулируемая кровать, устойчивые стулья)</li>
+        <li>Телевизор с субтитрами и увеличенным шрифтом меню</li>
+        <li>Набор полотенец и нескользящие коврики</li>
+      </ul>
+    </div>
+
+    <div class="room-specs">
+      <h3>Характеристики</h3>
+      <p><strong>Площадь:</strong> 28 м²</p>
+      <p><strong>Вместимость:</strong> до 2 гостей</p>
+      <p><strong>Этаж:</strong> 1 этаж, тихая зона с прямым выходом к лифту</p>
+      <p><strong>Тип кровати:</strong> 160×200 см с регулируемой высотой</p>
+      <p><strong>Вид из окна:</strong> на внутренний двор</p>
+    </div>
+  </div>
+
+  <!-- Блок цены и бронирования -->
+  <div class="room-price-block">
+    <p class="per-night">Стоимость за ночь</p>
+    <p class="price">7 500 ₽</p>
+    <p style="font-size: 0.9rem; opacity: 0.8;">Включая завтрак и помощь персонала при необходимости</p>
+    <a href="booking.html" class="btn-primary" style="padding: 15px 40px; text-decoration: none; color: white; border-radius: 8px; display: inline-block; margin-top: 15px;">Забронировать сейчас</a>
+  </div>
+
+  <!-- Доп. описание -->
+  <section>
+    <h2>Подробнее о номере</h2>
+    <p>В номере для гостей с ОВЗ мы учли все требования доступности: от ширины дверных проёмов до расположения элементов управления. Душевая кабина без порога и с поручнями обеспечивает безопасность, а регулируемая кровать позволяет подобрать оптимальную высоту. Кнопка экстренного вызова даёт уверенность в том, что помощь придёт быстро. Персонал отеля прошёл обучение по работе с гостями с особыми потребностями и готов оказать любую необходимую поддержку.</p>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 Отель Fir Di. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Логика переключения галереи
+    function changeImage(src) {
+      const mainImg = document.getElementById('main-image');
+      const thumbs = document.querySelectorAll('.gallery-thumbs img');
+      
+      // Убираем активный класс у всех
+      thumbs.forEach(thumb => thumb.classList.remove('active'));
+      
+      // Находим кликнутую картинку и ставим ей класс
+      event.target.classList.add('active');
+      
+      // Меняем главную картинку
+      mainImg.src = src;
+    }
+
+    // Логика шапки 
+    const userNickname = localStorage.getItem('user_nickname');
+    const authBtn = document.getElementById('auth-btn');
+
+    if (userNickname && authBtn) {
+      authBtn.textContent = `Привет, \${userNickname}!`;
+      authBtn.href = '#';
+      authBtn.style.pointerEvents = 'none';
+      authBtn.style.opacity = '0.9';
+      authBtn.style.cursor = 'default';
+
+      const logoutBtn = document.createElement('a');
+      logoutBtn.className = 'btn-outline';
+      logoutBtn.textContent = 'Выйти';
+      logoutBtn.style.marginLeft = '10px';
+      logoutBtn.style.padding = '8px 16px';
+      logoutBtn.style.textDecoration = 'none';
+      logoutBtn.style.display = 'inline-block';
+
+      logoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        localStorage.removeItem('user_nickname');
+        window.location.reload();
+      });
+      authBtn.parentNode.insertBefore(logoutBtn, authBtn.nextSibling);
+    }
+  </script>
+</body>
+</html>

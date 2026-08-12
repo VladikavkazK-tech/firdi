@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fir Di — Отдых в гармонии с природой</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Шапка сайта -->
+<header class="site-header">
+<div class="container header-inner">
+<a href="/index.html" class="logo">Fir Di</a>
+<nav class="main-nav">
+<a href="/index.html">Главная</a>
+<a href="/room-detail.html">Номера</a>
+<a href="/events.html">Мероприятия</a>
+<a href="/discounts.html">Скидки</a>
+</nav>
+<div class="header-actions">
+<a href="index.html#callback-form" class="btn-primary">Забронировать</a>
+</div>
+</div>
+</header>
+
+<!-- Главный экран -->
+<section class="hero">
+<div class="container">
+<h1>Fir Di: Современная деревня в лесу</h1>
+<p>Мы создали пространство, где природа встречается с комфортом. Отдельные домики, пятиразовое питание и мероприятия для всей семьи.</p>
+<a href="#rooms" class="btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Выбрать номер</a>
+</div>
+</section>
+
+<!-- О нас / Преимущества -->
+<section id="about" class="section">
+<div class="container">
+<h2 class="section-title">Почему Fir Di?</h2>
+<div class="grid-3">
+<div class="card">
+<h3>Экологичность</h3>
+<p>Мы используем натуральные материалы и энергосберегающие технологии, чтобы сохранить лес таким, каким его создала природа.</p>
+</div>
+<div class="card">
+<h3>Пятиразовое питание</h3>
+<p>В стоимость проживания включено полноценное пятиразовое питание по системе «шведский стол» с локальными продуктами.</p>
+</div>
+<div class="card">
+<h3>Комфорт и связь</h3>
+<p>Стабильный Wi‑Fi на всей территории, продуманная инфраструктура и бесплатный трансфер от метро «Лесная».</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Блок: Оставьте номер для связи -->
+<section id="callback-form" class="section bg-dark">
+<div class="container">
+<h2 class="section-title" style="color: var(--white);">Оставьте номер для связи</h2>
+<p style="text-align: center; color: #ccc; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+Менеджер перезвонит в течение 15 минут, поможет подобрать номер и расскажет про актуальные скидки.
+</p>
+<form id="callback-form" class="contact-form" style="max-width: 500px; margin: 0 auto;">
+<div class="form-group">
+<label for="cb-name" style="color: var(--white);">Ваше имя</label>
+<input type="text" id="cb-name" name="name" placeholder="Иван Иванов" required />
+</div>
+<div class="form-group">
+<label for="cb-phone" style="color: var(--white);">Номер телефона</label>
+<input type="tel" id="cb-phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+</div>
+<button type="submit" class="btn-primary" style="width: 100%; padding: 15px; font-size: 1rem;">Заказать звонок</button>
+<p style="text-align: center; font-size: 0.85rem; color: #888; margin-top: 15px;">
+Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.
+</p>
+</form>
+<div id="callback-message" style="text-align: center; margin-top: 25px; font-weight: bold; color: #4caf50; display: none;"></div>
+</div>
+</section>
+
+<!-- Афиша (кратко, со ссылкой на events.html) -->
+<section id="events" class="section">
+<div class="container">
+<h2 class="section-title">Афиша мероприятий</h2>
+<div class="grid-3">
+<div class="card">
+<h3>Фестиваль лесных звуков</h3>
+<p>25–27 августа. Живая музыка, мастер‑классы, вечерние костры.</p>
+<div style="margin-top: 15px; text-align: right;">1 500 ₽</div>
+<a href="events.html" class="btn-outline" style="width: 100%; margin-top: 10px;">Подробнее</a>
+</div>
+<div class="card">
+<h3>Йога-ретрит «Тишина леса»</h3>
+<p>10–12 сентября. Практики на рассвете, медитации, здоровое питание.</p>
+<div style="margin-top: 15px; text-align: right;">4 000 ₽</div>
+<a href="events.html" class="btn-outline" style="width: 100%; margin-top: 10px;">Подробнее</a>
+</div>
+<div class="card">
+<h3>Гастрономический вечер</h3>
+<p>5 октября. Ужин от шефа, дегустация, фортепианная музыка.</p>
+<div style="margin-top: 15px; text-align: right;">3 500 ₽</div>
+<a href="events.html" class="btn-outline" style="width: 100%; margin-top: 10px;">Подробнее</a>
+</div>
+</div>
+<div style="text-align: center; margin-top: 40px;">
+<a href="events.html" class="btn-outline" style="padding: 12px 30px;">Смотреть всю афишу</a>
+</div>
+</div>
+</section>
+
+<!-- Блок: Контакты и расположение -->
+<section id="contacts" class="section">
+  <div class="container">
+    <h2 class="section-title">Контакты и расположение</h2>
+
+    <div class="grid-2">
+      <!-- Левая колонка: контакты -->
+      <div class="contact-col">
+        <h3>Свяжитесь с нами</h3>
+        <p>Мы с радостью ответим на любые вопросы и поможем подобрать домик под ваши планы.</p>
+
+        <div class="info-block">
+          <strong>Адрес:</strong><br>
+          пос. Лесной, территория Fir Di, 1
+        </div>
+
+        <div class="info-block">
+          <strong>Телефон:</strong><br>
+          <a href="tel:+79991234567" style="color: var(--primary); text-decoration: none; font-weight: 600;">+7 (999) 123-45-67</a>
+          (круглосуточно)
+        </div>
+
+        <div class="info-block">
+          <strong>Email:</strong><br>
+          <a href="mailto:hello@firdi.ru" style="color: var(--primary); text-decoration: none; font-weight: 600;">hello@firdi.ru</a>
+        </div>
+
+        <div class="info-block" style="margin-top: 30px;">
+          <strong>Режим работы ресепшн:</strong><br>
+          Ежедневно, круглосуточно
+        </div>
+
+        <div class="info-block">
+          <strong>Трансфер:</strong><br>
+          Бесплатный трансфер от метро «Лесная» по предварительному бронированию.
+        </div>
+      </div>
+
+      <!-- Правая колонка: расположение и ориентиры -->
+      <div class="location-col">
+        <h3>Как нас найти</h3>
+        <p>Fir Di расположен в сосновом бору, в 15 км от центра города. Тихая территория и отсутствие городской суеты позволяют по-настоящему отдохнуть.</p>
+
+        <!-- Заглушка под карту: сюда можно вставить iframe от Яндекс Карт или Google Maps -->
+        <div style="width: 100%; height: 320px; background-color: #eef2f5; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px;">
+          [Интерактивная карта с меткой Fir Di]
+        </div>
+
+        <h4>Как добраться</h4>
+        <ul class="transport-list" style="line-height: 1.6;">
+          <li><strong>На автомобиле:</strong> По трассе М‑10 до поворота на пос. Лесной, далее по указателям до Fir Di. На территории — бесплатная охраняемая парковка.</li>
+          <li><strong>На общественном транспорте:</strong> От метро «Лесная» автобус № 17 до остановки «Лесная поляна», далее 10 минут пешком по лесной дорожке.</li>
+          <li><strong>На такси/трансфере:</strong> Сообщите водителю «Fir Di, пос. Лесной» — вас довезут прямо к ресепшн.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Галерея ориентиров -->
+    <div style="margin-top: 50px;">
+      <h3 style="margin-bottom: 25px;">Как нас найти: фото ориентиров</h3>
+      <div class="gallery-thumbs" style="display: flex; gap: 15px; flex-wrap: wrap;">
+        <img src="чото.png"
+             alt="Входная группа Fir Di"
+             style="width: 100%; min-width: 280px; height: 220px; object-fit: cover; border-radius: 8px;">
+
+        <img src="чото.png"
+             alt="Подъездная дорога к Fir Di"
+             style="width: 100%; min-width: 280px; height: 220px; object-fit: cover; border-radius: 8px;">
+
+        <img src="чото.png"
+             alt="Вид на домики Fir Di в лесу"
+             style="width: 100%; min-width: 280px; height: 220px; object-fit: cover; border-radius: 8px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+<div class="container">
+<p>&copy; 2024 Отель Fir Di. Все права защищены.</p>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
